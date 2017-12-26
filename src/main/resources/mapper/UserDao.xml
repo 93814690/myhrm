@@ -3,9 +3,14 @@
 PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="top.liyf.dao.UserDao">
-  
-   <select id="selectByLoginnameAndPassword" parameterType="hashmap"  resultType="top.liyf.domain.User" >
-		 select * from  user_inf  where loginname = #{loginname} and password = #{password} 
+    <insert id="save" parameterType="user">
+        insert into user_inf (username, loginname, password, status, createdate)
+        values (#{username}, #{loginname}, #{password}, #{status},
+                #{createDate});
+    </insert>
+
+    <select id="selectByLoginnameAndPassword" parameterType="hashmap"  resultType="top.liyf.domain.User" >
+        select * from  user_inf  where loginname = #{loginname} and password = #{password}
    </select>
 
 
