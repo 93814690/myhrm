@@ -33,9 +33,6 @@
               if ($.trim(username.val()) == "") {
                   msg = "姓名不能为空！";
                   username.focus();
-              } else if ($.trim(status.val()) == "") {
-                  msg = "状态不能为空！";
-                  status.focus();
               } else if ($.trim(loginname.val()) == "") {
                   msg = "登录名不能为空！";
                   loginname.focus();
@@ -73,13 +70,14 @@
       <form action="${ctx}/user/addUser" id="userForm" method="post">
         <!-- 隐藏表单，flag表示添加标记 -->
         <input type="hidden" name="flag" value="2">
+        <input type="hidden" name="status" value="0">
         <table width="100%" border="0" cellpadding="0" cellspacing="10" class="main_tab">
           <tr>
             <td class="font3 fftd">
               <table>
                 <tr>
                   <td class="font3 fftd">姓&nbsp;名：<input type="text" name="username" id="username" size="20"/></td>
-                  <td class="font3 fftd">状&nbsp;态：<input type="text" name="status" id="status" value="2" readonly size="20"/></td>
+                  <td class="font3 fftd">状&nbsp;态： 未审核</td>
                 </tr>
 
                 <tr>
